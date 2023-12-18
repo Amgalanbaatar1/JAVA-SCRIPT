@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="has-background-link-light">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <header>
+      <a class="button" href="/index.html">Home</a>
+    </header>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100vh">
+            <div class="box">
+              <p style="font-size: 32px">Өгөгдсөн 2 оронтой тооны цифрүүдийн үржвэрийг ол.</p>
+              <div class="is-flex mb-4">
+                <input id="orolt" class="input is-large" type="text" placeholder="N too" />
+
+                <button class="button is-primary is-large" onclick="doSomething();">Бодох</button>
+              </div>
+              <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function doSomething() {
+        const input = Number(document.getElementById("orolt").value);
+        let n = input;
+        let result = "";
+        for (i = n - 1; i >= 0; i--) {
+          for (j = 0; j < n - i; j++) {
+            result = result + "* ";
+          }
+          result = result + "\n";
+        }
+
+        document.getElementById("garalt").innerText = result;
+      }
+    </script>
+  </body>
+</html>

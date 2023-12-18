@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <header>
+      <a class="button" href="/index.html">Home</a>
+    </header>
+    <script src="scripts/even_or_odd.js"></script>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100vh">
+            <div class="box">
+              <div class="is-flex mb-4">
+                <input style="width: 550px; height: 50px; border-radius: 10px" id="orolt" class="input is-large" type="text" placeholder="Input" />
+                <button class="button is-primary is-large" onclick="doSomething();" style="width: 100px; height: 50px; border-radius: 10px; background-color: aqua">Бодох</button>
+              </div>
+              <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function doSomething() {
+        const oroltElement = Number(document.getElementById("orolt").value);
+        let result = "";
+        const remainder = oroltElement % 2;
+        if (remainder == 0) {
+          result = "even";
+        } else {
+          result = "odd";
+        }
+        document.getElementById("garalt").innerText = result;
+      }
+    </script>
+  </body>
+</html>

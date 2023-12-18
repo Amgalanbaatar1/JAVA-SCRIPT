@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="has-background-link-light">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <header>
+      <a class="button" href="/index.html">Home</a>
+    </header>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100vh">
+            <div class="box">
+              <div class="is-flex mb-4">
+                <input id="orolt1" class="input is-large" type="text" placeholder="Input" />
+                <input id="orolt2" class="input is-large" type="text" placeholder="Input" />
+                <input id="orolt3" class="input is-large" type="text" placeholder="Input" />
+                <button class="button is-primary is-large" onclick="doSomething();">Бодох</button>
+              </div>
+              <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function doSomething() {
+        const num1 = Number(document.getElementById("orolt1").value);
+        const num2 = Number(document.getElementById("orolt2").value);
+        const num3 = Number(document.getElementById("orolt3").value);
+
+        let max = num1;
+
+        if (num2 > max) {
+          max = num2;
+        }
+
+        if (num3 > max) {
+          max = num3;
+        }
+
+        let result = max;
+
+        document.getElementById("garalt").innerText = result; //
+      }
+    </script>
+  </body>
+</html>

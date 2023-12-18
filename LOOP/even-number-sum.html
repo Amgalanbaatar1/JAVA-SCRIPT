@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="has-background-link-light">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <header>
+      <a class="button" href="/index.html">Home</a>
+    </header>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100vh">
+            <div class="box">
+              <p style="font-size: 32px">Өгөгдсөн тоо хүртэлх тэгш тоонуудын нийлбэрийг ол.</p>
+              <div class="is-flex mb-4">
+                <input id="num" class="input is-large" type="text" placeholder="num" />
+
+                <button class="button is-primary is-large" onclick="doSomething();">Бодох</button>
+              </div>
+              <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 1ees 100 hurtel hevleh
+      // for (let i = 1; i <= 100; i++) {
+      //   console.log(i);
+      // }
+      // 1ees 100 hurtel hevleh
+
+      //  N NUMBER SUM//
+
+      function doSomething() {
+        const n = Number(document.getElementById("num").value);
+
+        let result = n;
+
+        let sum = 0;
+
+        let counter = 0;
+        while (counter < n) {
+          sum = sum + counter;
+          counter = counter + 2;
+        }
+        result = sum;
+
+        document.getElementById("garalt").innerText = result;
+      }
+    </script>
+  </body>
+</html>

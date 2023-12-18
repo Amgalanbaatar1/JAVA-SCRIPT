@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="has-background-link-light">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <header>
+      <a class="button" href="/index.html">Home</a>
+    </header>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100vh">
+            <div class="box">
+              <p style="font-size: 32px">Өгөгдсөн 2 оронтой тооны цифрүүдийн үржвэрийг ол.</p>
+              <div class="is-flex mb-4">
+                <input id="orolt" class="input is-large" type="text" placeholder="N too" />
+
+                <button class="button is-primary is-large" onclick="doSomething();">Бодох</button>
+              </div>
+              <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function doSomething() {
+        let orolt = document.getElementById("orolt").value;
+        let garalt = document.getElementById("garalt");
+
+        if (orolt.length === 3 && !isNaN(orolt)) {
+          let digit1 = Number(orolt[0]);
+          let digit2 = Number(orolt[1]);
+          let digit3 = Number(orolt[2]);
+
+          let num = digit1 + digit2 + digit3;
+
+          garalt.innerText = " цифрүүдийн нийлбэр:" + num;
+        } else {
+          garalt.innerText = "3 оронтой тоо оруулна уу?";
+        }
+      }
+    </script>
+  </body>
+</html>

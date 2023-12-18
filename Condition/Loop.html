@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="has-background-link-light">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <header>
+      <a class="button" href="/index.html">Home</a>
+    </header>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100vh">
+            <div class="box">
+              <p style="font-size: 32px">Days in month</p>
+              <div class="is-flex mb-4">
+                <input id="year" class="input is-large" type="text" placeholder="year" />
+                <input id="month" class="input is-large" type="text" placeholder="month" />
+
+                <button class="button is-primary is-large" onclick="doSomething();">Бодох</button>
+              </div>
+              <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 1ees 100 hurtel hevleh
+      // for (let i = 1; i <= 100; i++) {
+      //   console.log(i);
+      // }
+      // 1ees 100 hurtel hevleh
+
+      //  EVEN NUMBER SUM//
+
+      // DAYS IN MONTH//
+      function doSomething() {
+        const year = Number(document.getElementById("year").value);
+        const month = Number(document.getElementById("month").value);
+        let result = "";
+
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+          result = 31;
+        } else {
+          if (month == 2) {
+            if (year % 100 === 0) {
+              if (year % 400 === 0) {
+                result = 29;
+              } else {
+                result = 28;
+              }
+            } else {
+              if (year % 2 == 0) {
+                result = 29;
+              } else {
+                result = 29;
+              }
+            }
+          } else {
+            result = 30;
+          }
+        }
+
+        if (month < 1 || month > 12) {
+          result = "Please..enter correct month";
+        }
+
+        document.getElementById("garalt").innerText = result;
+      }
+
+      // END OF DAYS AND MONTH//
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <body>
+      <header>
+        <a class="button" href="/index.html">Home</a>
+      </header>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-half is-offset-one-quarter">
+            <div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100vh">
+              <div class="box">
+                <div class="is-flex mb-4">
+                  <input style="width: 550px; height: 50px; border-radius: 10px" id="orolt" class="input is-large" type="text" placeholder="Input" />
+                  <button class="button is-primary is-large" onclick="doSomething();" style="width: 100px; height: 50px; border-radius: 10px; background-color: aqua">Бодох</button>
+                </div>
+                <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        // TEGSH TOO-SONDGOI-TOO//
+        let number = 100;
+        if (number % 2 == 0) {
+          console.log("tegsh too");
+        } else {
+          console.log("sondgoi too");
+        }
+        // ADULT-OR-NOT//
+        const age = 17;
+        if (age < 18) {
+          console.log("yes you can drive");
+        } else {
+          console.log("no you cant drive");
+        }
+
+        let a = -1100;
+        let b = -25;
+        let c = -30;
+        let d = -1200;
+        let largestNum;
+        let secondLargestnum;
+        let answer;
+
+        if (a > b && a > c && a > d) {
+          if (b > c && b > d) {
+            answer = b;
+          } else if (c > d && c > b) {
+            answer = c;
+          } else answer = d;
+        } else if (b > a && b > c && b > d) {
+          if (a > c && a > d) {
+            answer = a;
+          } else if (c > a && c > d) {
+            answer = c;
+          } else answer = d;
+        } else if (c > a && c > b && c > d) {
+          if (a > b && a > d) {
+            answer = a;
+          } else if (b > a && b > d) {
+            answer = b;
+          } else answer = d;
+        } else {
+          if (a > b && a > c) {
+            answer = a;
+          } else if (b > a && b > c) {
+            answer = b;
+          } else answer = c;
+        }
+        console.log(answer);
+
+        console.log(secondLargestnum);
+      </script>
+    </body>
+  </head>
+</html>

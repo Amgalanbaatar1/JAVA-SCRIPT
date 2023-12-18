@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="has-background-link-light">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <header>
+      <a class="button" href="/index.html">Home</a>
+    </header>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100vh">
+            <div class="box">
+              <p style="font-size: 32px">1000-c дээш тооны зэрэгийг олох</p>
+              <div class="is-flex mb-4">
+                <input id="orolt" class="input is-large" type="text" placeholder="num" />
+
+                <button class="button is-primary is-large" onclick="doSomething();">Бодох</button>
+              </div>
+              <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function doSomething() {
+        const num1 = Number(document.getElementById("orolt").value);
+        if (num1 > 1 && num1 < 1000) {
+          let powered = 1;
+          let counter = 0;
+          while (powered < 1000) {
+            powered = powered * num1;
+            counter = counter + 1;
+          }
+          result = num1 + "-ын " + counter + " зэрэг нь 1000-аас их байна:" + powered;
+        } else {
+          result = "1000-аас доош тоо оруулна уу.";
+        }
+
+        document.getElementById("garalt").innerText = result;
+      }
+    </script>
+  </body>
+</html>

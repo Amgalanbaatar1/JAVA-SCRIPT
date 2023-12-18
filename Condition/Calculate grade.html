@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <header>
+      <a class="button" href="/index.html">Home</a>
+    </header>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100vh">
+            <div class="box">
+              <h1 style="font-size: 32px">Дүн бодох</h1>
+              <p>N тоо өгөхөд, тухайн тоонд харгалзах дүнг буцаана уу.</p>
+              <div class="is-flex mb-4">
+                <input style="width: 550px; height: 50px; border-radius: 10px" id="orolt" class="input is-large" type="text" placeholder="Number" />
+                <button class="button is-primary is-large" onclick="doSomething();" style="width: 100px; height: 50px; border-radius: 10px; background-color: aqua">Бодох</button>
+              </div>
+              <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function doSomething() {
+        let num = Number(document.getElementById("orolt").value);
+        let result = "";
+
+        if (num >= 0) {
+          result = "F";
+          console.log("F");
+        }
+        if (num >= 60) {
+          result = "D";
+          console.log("D");
+        }
+        if (num >= 70) {
+          result = "C";
+          console.log("C");
+        }
+        if (num >= 80) {
+          result = "B";
+          console.log("B");
+        }
+        if (num >= 90) {
+          result = "A";
+          console.log("A");
+        }
+        if (num >= 100) {
+          result = "A";
+          console.log("A");
+        }
+
+        document.getElementById("garalt").innerText = result;
+      }
+    </script>
+  </body>
+</html>
