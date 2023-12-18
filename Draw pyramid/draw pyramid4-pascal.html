@@ -30,18 +30,18 @@
         const input = Number(document.getElementById("orolt").value);
         let n = input;
         let result = "";
+        const lines = [];
 
-        let r1 = [1];
-        let r2 = [1, 1];
-        let r3 = [1, 2, 1];
-        let r4 = [1, 3, 3, 1];
-        let r5 = [r4[0] + r4[0] + r4[1] + r4[1] + r4[2] + r4[2] + r4[3] + r4[3]];
+        // let r1 = [1];
+        // let r2 = [1, 1];
+        // let r3 = [1, 2, 1];
+        // let r4 = [1, 3, 3, 1];
+        // let r5 = [r4[0] + r4[0] + r4[1] + r4[1] + r4[2] + r4[2] + r4[3] + r4[3]];
 
         let prev = [1];
 
         for (let i = 0; i < n; i++) {
           if (i === 0) {
-            current = prev;
           }
 
           let current = [];
@@ -59,9 +59,23 @@
               current.push(prev[k - 1]);
             }
           }
-          result = result + "\n";
+          prev = current;
+
+          lines.push(current.join(" "));
+          // result = result + current.join(" ");
         }
-        console.log(current);
+        console.log(lines);
+        const maxLen = lines[n - 1].length;
+        console.log(maxLen);
+
+        for (let i = 0; i < n; i++) {
+          const spaceLen = (maxLen - lines[i].length) / 2;
+          for (let k = 0; k < spaceLen; k++) {
+            result = result + " ";
+          }
+          result = result + lines[i] + "\n";
+        }
+
         document.getElementById("garalt").innerText = result;
       }
     </script>
